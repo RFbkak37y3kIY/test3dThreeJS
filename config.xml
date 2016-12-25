@@ -2,6 +2,7 @@
 
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "gipertroniks.games.blob_puzzle"
         version   = "1.0.3">
 
@@ -20,14 +21,19 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-    <preference name="permissions"                value="none"/>
+    <preference name="permissions" value="none"/>
 
     <access origin="*"/>
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <icon src="res/icon.png" />
+    <!-- preference name="android-targetSdkVersion" value="16"/ -->
+    <preference name='phonegap-version' value='cli-5.1.1' />
     <platform name="android">
-        <preference name="android-targetSdkVersion" value="16"/>
+        <!-- gap:plugin name="com-admob-plugin" version="5.3.1" source="npm"/ -->
+        <plugin name="cordova-plugin-whitelist"  />
+        <plugin name="cordova-plugin-crosswalk-webview"  />
+        <preference name="xwalkMode" value="lite" />
         <allow-intent href="market:*" />
         <preference name="Orientation" value="portrait" />
     </platform>
